@@ -1,0 +1,8 @@
+com.example.emailsplitter.app-pngs-0 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\build\generated\res\pngs\debug
+com.example.emailsplitter.app-updated_navigation_xml-1 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\build\generated\updated_navigation_xml\debug
+com.example.emailsplitter.app-packageDebugResources-2 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.emailsplitter.app-packageDebugResources-3 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.emailsplitter.app-debug-4 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.emailsplitter.app-debug-5 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\src\debug\res
+com.example.emailsplitter.app-main-6 C:\Users\Sinah\Documents\CS4530\In Class practices\EmailSplitter\EmailSplitter\app\src\main\res
+gradleHome-0 C:\Users\Sinah\.gradle

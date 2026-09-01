@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.emailsplitter.app-mergeDebugResources-39:/layout/fragment_input.xml",
+        "source": "com.example.emailsplitter.app-main-42:/layout/fragment_input.xml"
+    },
+    {
+        "merged": "com.example.emailsplitter.app-mergeDebugResources-39:/layout/activity_main.xml",
+        "source": "com.example.emailsplitter.app-main-42:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.emailsplitter.app-mergeDebugResources-39:/layout/fragment_result.xml",
+        "source": "com.example.emailsplitter.app-main-42:/layout/fragment_result.xml"
+    }
+]

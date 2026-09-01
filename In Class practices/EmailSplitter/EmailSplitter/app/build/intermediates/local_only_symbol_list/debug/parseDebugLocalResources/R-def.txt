@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id domainView
+id emailInput
+id fl_frag_container
+id userView
+layout activity_main
+layout fragment_input
+layout fragment_result
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string hello_blank_fragment
+style Base.Theme.EmailSplitter
+style Theme.EmailSplitter
+xml backup_rules
+xml data_extraction_rules
