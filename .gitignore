@@ -1,0 +1,19 @@
+# Android Studio
+.idea/
+*.iml
+
+# Gradle and generated builds
+.gradle/
+**/build/
+
+# Machine-specific settings
+local.properties
+
+# Generated packages
+*.apk
+*.aab
+
+# macOS ZIP metadata
+__MACOSX/
+.DS_Store
+._*
