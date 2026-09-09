@@ -35,6 +35,94 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_first, container, false)
         val binding = FragmentFirstBinding.inflate(inflater, container, false)
+        // navigate to second fragment
+        binding.button.setOnClickListener {
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            // key="Button clicked" value=button.text
+            sentData.putString("Button clicked", binding.button.text.toString())
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
+
+        // Bind pink button
+        binding.pinkButton.setOnClickListener{
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            sentData.putString(
+                "Button clicked", binding.pinkButton.text.toString()
+            )
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
+
+        // Bind cyan button
+        binding.cyanButton.setOnClickListener {
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            sentData.putString (
+                "Button clicked", binding.cyanButton.text.toString()
+            )
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
+
+        // Bind peach button
+        binding.peachButton.setOnClickListener{
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            sentData.putString(
+                "Button clicked", binding.peachButton.text.toString()
+            )
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
+
+        // Bind sage button
+        binding.sageButton.setOnClickListener {
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            sentData.putString (
+                "Button clicked", binding.sageButton.text.toString()
+            )
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
+
+        // Bind lilac button
+        binding.lilacButton.setOnClickListener {
+            val myFrag = SecondFragment()
+            val sentData = Bundle()
+            sentData.putString(
+                "Button clicked", binding.lilacButton.text.toString()
+            )
+            myFrag.arguments = sentData
+
+            val transFrag = parentFragmentManager.beginTransaction()
+            transFrag.replace(R.id.fragmentContainerView, myFrag, "tag")
+            transFrag.addToBackStack(null)
+            transFrag.commit()
+        }
         return binding.root
     }
 

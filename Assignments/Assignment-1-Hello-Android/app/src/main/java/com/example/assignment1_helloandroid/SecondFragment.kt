@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.assignment1_helloandroid.databinding.FragmentFirstBinding
+import com.example.assignment1_helloandroid.databinding.FragmentSecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,9 +34,20 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        // Create binding and pass in the argument from button clicked on first fragment
+        val binding = FragmentSecondBinding.inflate(inflater, container, false)
+        val buttonClicked = arguments?.getString("Button clicked")
+
+        // display received text
+        binding.textView.text = buttonClicked
+        // Return to firstFragment when Go Back is clicked
+        binding.button2.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+        return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        //return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
     companion object {
