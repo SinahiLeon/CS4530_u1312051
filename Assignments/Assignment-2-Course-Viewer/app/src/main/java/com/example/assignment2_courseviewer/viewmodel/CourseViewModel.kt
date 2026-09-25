@@ -18,12 +18,13 @@ class CourseViewModel : ViewModel() {
     )
         private set
 
-    fun addCourse(course: Course){
+    fun addCourse(course: Course) {
         listOfCourses = listOfCourses + course;
     }
 
     fun deleteCourse(course: Course) {
         listOfCourses = listOfCourses - course;
     }
+
 
 }
