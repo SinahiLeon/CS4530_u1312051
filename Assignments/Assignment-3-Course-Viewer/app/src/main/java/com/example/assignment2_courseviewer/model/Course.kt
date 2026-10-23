@@ -1,15 +1,12 @@
 package com.example.assignment2_courseviewer.model
 
-// data class to hold data
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "courses")
 data class Course(
     val department: String,
     val courseNumber: String,
     val location: String,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
-
-/*
-val course = Course(
-    department = "CS",
-    courseNumber = "4530",
-    location = "WEB L105"
- */

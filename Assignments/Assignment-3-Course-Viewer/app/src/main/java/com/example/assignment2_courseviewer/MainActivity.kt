@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import com.example.assignment2_courseviewer.ui.theme.CourseDetailsScreen
 import com.example.assignment2_courseviewer.ui.theme.CourseListScreen
 import com.example.assignment2_courseviewer.ui.theme.AddCourseScreen
+import com.example.assignment2_courseviewer.viewmodel.CourseViewModelFactory
 
 
 enum class Screen {
@@ -28,7 +29,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val courseViewModel: CourseViewModel = viewModel()
+            val courseViewModel: CourseViewModel = viewModel(
+                factory = CourseViewModelFactory(applicationContext))
 
             // Remember which screen is being displayed
             var currentScreen by remember { mutableStateOf(Screen.LIST) }

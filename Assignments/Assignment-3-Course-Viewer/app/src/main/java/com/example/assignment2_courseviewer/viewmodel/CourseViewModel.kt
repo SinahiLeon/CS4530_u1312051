@@ -1,30 +1,52 @@
 package com.example.assignment2_courseviewer.viewmodel
 
-// Referencing model.Course
-import com.example.assignment2_courseviewer.model.Course
-import androidx.compose.runtime.mutableStateOf  // to turn our list into state that Compose can observe
-import androidx.lifecycle.ViewModel     // to use MVVM architecture
-// Access the properties (like value of course) listOfCourses
+import android.content.Context
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import com.example.assignment2_courseviewer.model.Course
+import com.example.assignment2_courseviewer.model.CourseRepository
+import kotlinx.coroutines.launch
 
-class CourseViewModel : ViewModel() {
-    var listOfCourses by mutableStateOf(
-        listOf(
-            Course("CS", "4530", "WEB L104"),
-            Course("CS", "3550", "WEB 103"),
-            Course("ETHC", "3390", "LIB 105")
-        )
-    )
+class CourseViewModel(
+    private val repository: CourseRepository
+) : ViewModel() {
+
+    var listOfCourses by mutableStateOf<List<Course>>(emptyList())
         private set
 
+    init {
+        viewModelScope.launch {
+            repository.courses.collect { courses ->
+                listOfCourses = courses
+            }
+        }
+    }
+
     fun addCourse(course: Course) {
-        listOfCourses = listOfCourses + course;
+        viewModelScope.launch {
+            repository.addCourse(course)
+        }
     }
 
     fun deleteCourse(course: Course) {
-        listOfCourses = listOfCourses - course;
+        viewModelScope.launch {
+            repository.deleteCourse(course)
+        }
     }
+}
 
+class CourseViewModelFactory(context: Context) : ViewModelProvider.Factory {
+    private val repository = CourseRepository.getInstance(context.applicationContext)
 
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(CourseViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return CourseViewModel(repository) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel")
+    }
 }
