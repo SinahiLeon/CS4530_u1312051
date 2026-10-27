@@ -27,15 +27,11 @@ class CourseViewModel(
     }
 
     fun addCourse(course: Course) {
-        viewModelScope.launch {
-            repository.addCourse(course)
-        }
+        repository.addCourse(course)
     }
 
     fun deleteCourse(course: Course) {
-        viewModelScope.launch {
-            repository.deleteCourse(course)
-        }
+        repository.deleteCourse(course)
     }
 }
 
