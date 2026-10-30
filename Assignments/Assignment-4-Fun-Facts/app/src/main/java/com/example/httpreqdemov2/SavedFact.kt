@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "facts")
 data class SavedFact (
     @PrimaryKey (autoGenerate = true)
-    val id = Int = 0
-    val text = String
+    val id: Int = 0,
+    val text: String
 )

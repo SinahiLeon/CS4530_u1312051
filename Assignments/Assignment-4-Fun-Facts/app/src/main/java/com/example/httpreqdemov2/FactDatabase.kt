@@ -9,6 +9,6 @@ import androidx.room.RoomDatabase
     exportSchema = false
 )
 
-abstract class FactDatbase : RoomDatabase(){
+abstract class FactDatabase : RoomDatabase(){
     abstract fun factDao(): FactDao
 }

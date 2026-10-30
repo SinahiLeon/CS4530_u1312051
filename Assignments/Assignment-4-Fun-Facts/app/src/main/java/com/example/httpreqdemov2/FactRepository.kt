@@ -10,7 +10,7 @@ class FactRepository private constructor(
     private val client: HttpClient
 ) {
     fun searchFacts(keyword: String): Flow<List<SavedFact>>{
-        return dao.searchFacts(keyword)
+        return dao.searchFacts("%$keyword%")
     }
     suspend fun fetchFact() {
         val fact: FunFact = client
