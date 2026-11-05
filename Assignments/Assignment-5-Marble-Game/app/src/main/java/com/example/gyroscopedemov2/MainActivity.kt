@@ -50,7 +50,7 @@ fun Gyroscope() {
         context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
     }
 
-    val gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
+    val gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)
     if (gyroscope == null) {
         Text("No gyroscope available on this device")
         return
