@@ -40,9 +40,12 @@ import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
+import com.example.textsummarizerdemov2.BuildConfig
 class MyViewModel : ViewModel()
 {
+    private val model = GenerativeModel(
+        modelName = "gemini-3.5-flash",
+        apiKey = BuildConfig.GEMINI_API_KEY)
 
     private val summaryMutable = MutableStateFlow("")
     val summary = summaryMutable.asStateFlow()
@@ -50,7 +53,9 @@ class MyViewModel : ViewModel()
     fun summarizeText(input: String) {
         viewModelScope.launch {
             try {
+                val response = model.generateContent("Summarize the input: $input")
 
+                summaryMutable.value = response.text ?: "No summary available"
             } catch (e: Exception) {
                 summaryMutable.value = "Error: ${e.message}"
                 Log.e("SummarizeError", e.toString())
