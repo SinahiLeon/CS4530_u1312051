@@ -1,4 +1,4 @@
-package com.example.gyroscopedemov2
+package com.example.gyroscopedemov2.model
 
 import android.content.Context
 import android.hardware.Sensor
