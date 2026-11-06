@@ -1,12 +1,8 @@
-package com.example.gyroscopedemov2.viewModel
-
+package com.example.gyroscopedemov2.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import kotlin.math.max
-import kotlin.math.min
 
 class MarbleViewModel : ViewModel() {
     var x by mutableStateOf(0f)
